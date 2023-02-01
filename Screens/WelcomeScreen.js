@@ -2,19 +2,17 @@ import { ScrollView, View, Text, StyleSheet, Image } from 'react-native';
 
 const WelcomeScreen = () => {
     return (
-    
-      <View style={styles.headerWrapper}>
-        <Image
-          style={styles.image}
-          source={require('../img/logo.png')}
-          
-          
-        />
 
-        <Text style={styles.headerText}>Little Lemon, your local Mediterranean Bistro</Text>
-      </View>
-      
-      
+        <View style={styles.headerWrapper}>
+            <Image
+                style={styles.image}
+                source={require('../img/logo.png')}
+            />
+
+            <Text style={styles.headerText}>Little Lemon, your local Mediterranean Bistro</Text>
+        </View>
+
+
     );
 }
 
