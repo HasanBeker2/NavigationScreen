@@ -8,26 +8,19 @@ import MenuScreen from "./Screens/MenuScreen";
 
 const Stack = createNativeStackNavigator();
 
- function App() {
+export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Welcome" component={WelcomeScreen} />
+      <Stack.Navigator
+        initialRouteName="Welcome"
+        screenOptions={{ headerStyle: { backgroundColor: '#FBDABB' } }}>
+        <Stack.Screen
+          name="Welcome"
+          component={WelcomeScreen}
+          options={{ title: 'Home' }}
+        />
         <Stack.Screen name="Menu" component={MenuScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  headerContainer: {
-    flex: 1,
-    backgroundColor: '#333333',
-  },
-
-  footerContainer: {
-    backgroundColor: '#333333',
-  },
-});
-
-export default App;
