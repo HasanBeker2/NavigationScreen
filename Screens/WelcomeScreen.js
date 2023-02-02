@@ -1,18 +1,17 @@
-import { ScrollView, View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }) => {
     return (
-
         <View style={styles.headerWrapper}>
             <Image
                 style={styles.image}
-                source={require('../img/logo.png')}
+                source={require('../img/littleLemonHeader.png')}
             />
-
             <Text style={styles.headerText}>Little Lemon, your local Mediterranean Bistro</Text>
+            <Pressable onPress={() => navigation.navigate('Menu')}>
+                <Text style={styles.buttonText}>View Menu</Text>
+            </Pressable>
         </View>
-
-
     );
 }
 
@@ -21,7 +20,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     headerWrapper: {
-        flexDirection: 'row',
+        flexDirection: 'column',
         justifyContent: 'center',
         margin: 10,
     },
@@ -35,16 +34,27 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     regularText: {
-        fontSize: 24,
+        fontSize: 18,
         padding: 20,
         marginVertical: 8,
-        color: '#EDEFEE',
+        color: 'gray',
         textAlign: 'center',
     },
+    buttonText: {
+        fontSize: 20,
+        paddingTop: 20,
+        //marginVertical: 8,
+        color: 'gray',
+        textAlign: 'center',
+        fontWeight:'bold'
+    },
     image: {
-        width: 100,
+        width: 300,
         height: 100,
-        borderRadius: 20,
+        resizeMode:'contain',
+        marginLeft:10
+
+       // borderRadius: 10,
     },
 });
 
